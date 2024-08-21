@@ -1,4 +1,4 @@
-{% set version = '0.2.1' %}
+{% set version = "0.2.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/voluModel_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/voluModel/voluModel_{{ version }}.tar.gz
-  sha256: 8fd558baa1d8ec5c31710693ee9576100cc4beb0cbd5b30750913f2df57a78ce
+  sha256: 6afbf0ff0577b31a20f0c7e639e2913fc949365b761478b1dd53407d71cf84de
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -55,17 +55,9 @@ test:
 about:
   home: https://hannahlowens.github.io/voluModel/
   license: GPL-3.0-only
-  summary: Facilitates modeling species' ecological niches and geographic distributions based
-    on occurrences and environments that have a vertical as well as horizontal component,
-    and projecting models into three-dimensional geographic space. Working in three
-    dimensions is useful in an aquatic context when the organisms one wishes to model
-    can be found across a wide range of depths in the water column. The package also
-    contains functions to automatically generate marine training model training regions
-    using machine learning, and interpolate and smooth patchily sampled environmental
-    rasters using thin plate splines. Davis Rabosky AR, Cox CL, Rabosky DL, Title PO,
-    Holmes IA, Feldman A, McGuire JA (2016) <doi:10.1038/ncomms11484>. Nychka D, Furrer
-    R, Paige J, Sain S (2021) <doi:10.5065/D6W957CT>. Pateiro-Lopez B, Rodriguez-Casal
-    A (2022) <https://CRAN.R-project.org/package=alphahull>.
+  summary: Facilitates modeling species' ecological niches and geographic distributions based on occurrences and environments that have a vertical as well as horizontal component, and projecting models into three-dimensional geographic space. Working in three dimensions is useful in an aquatic context when the organisms
+    one wishes to model can be found across a wide range of depths in the water column. The package also contains functions to automatically generate marine training model training regions using machine learning, and interpolate and smooth patchily sampled environmental rasters using thin plate splines. Davis Rabosky AR,
+    Cox CL, Rabosky DL, Title PO, Holmes IA, Feldman A, McGuire JA (2016) <doi:10.1038/ncomms11484>. Nychka D, Furrer R, Paige J, Sain S (2021) <doi:10.5065/D6W957CT>. Pateiro-Lopez B, Rodriguez-Casal A (2022) <https://CRAN.R-project.org/package=alphahull>.
   license_family: GPL3
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
