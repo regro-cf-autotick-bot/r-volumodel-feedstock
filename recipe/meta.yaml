@@ -1,6 +1,5 @@
 {% set version = '0.2.1' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-volumodel
@@ -13,8 +12,7 @@ source:
   sha256: 8fd558baa1d8ec5c31710693ee9576100cc4beb0cbd5b30750913f2df57a78ce
 
 build:
-  merge_build_host: True  # [win]
-  number: 0
+  number: 1
   noarch: generic
   rpaths:
     - lib/R/lib/
