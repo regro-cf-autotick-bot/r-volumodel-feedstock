@@ -1,6 +1,5 @@
 {% set version = "0.2.3" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-volumodel
@@ -13,7 +12,6 @@ source:
   sha256: f7b9bb0d8d3176271dc6268cc22868fc514cacc2f692396ab6e396939af67e63
 
 build:
-  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -30,8 +28,10 @@ requirements:
     - r-fields
     - r-ggplot2
     - r-ggtext
+    - r-metr
     - r-modeva
     - r-rangebuilder >=2.0
+    - r-rnaturalearth
     - r-sf
     - r-terra
     - r-viridislite
@@ -41,8 +41,10 @@ requirements:
     - r-fields
     - r-ggplot2
     - r-ggtext
+    - r-metr
     - r-modeva
     - r-rangebuilder >=2.0
+    - r-rnaturalearth
     - r-sf
     - r-terra
     - r-viridislite
