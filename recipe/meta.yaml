@@ -1,6 +1,5 @@
 {% set version = "0.2.4" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-volumodel
@@ -13,12 +12,15 @@ source:
   sha256: f8d5b4630d8a29b77d223ea0f71168529be7b1d18b1568f6334350b70a30f6ea
 
 build:
-  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -30,8 +32,10 @@ requirements:
     - r-fields
     - r-ggplot2
     - r-ggtext
-    - r-modeva
+    - r-metr
+    - r-predicts
     - r-rangebuilder >=2.0
+    - r-rnaturalearth
     - r-sf
     - r-terra
     - r-viridislite
@@ -41,8 +45,10 @@ requirements:
     - r-fields
     - r-ggplot2
     - r-ggtext
-    - r-modeva
+    - r-metr
+    - r-predicts
     - r-rangebuilder >=2.0
+    - r-rnaturalearth
     - r-sf
     - r-terra
     - r-viridislite
@@ -54,6 +60,7 @@ test:
 
 about:
   home: https://hannahlowens.github.io/voluModel/
+  dev_url: https://github.com/hannahlowens/voluModel
   license: GPL-3.0-only
   summary: Facilitates modeling species' ecological niches and geographic distributions based on occurrences and environments that have a vertical as well as horizontal component, and projecting models into three-dimensional geographic space. Working in three dimensions is useful in an aquatic context when the 
     organisms one wishes to model can be found across a wide range of depths in the water column. The package also contains functions to automatically generate marine training model training regions using machine learning, and interpolate and smooth patchily sampled environmental rasters using thin plate splines. Davis
