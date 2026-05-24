@@ -9,6 +9,8 @@ Package license: GPL-3.0-only
 
 Summary: Facilitates modeling species' ecological niches and geographic distributions based on occurrences and environments that have a vertical as well as horizontal component, and projecting models into three-dimensional geographic space. Working in three dimensions is useful in an aquatic context when the organisms one wishes to model can be found across a wide range of depths in the water column. The package also contains functions to automatically generate marine training model training regions using machine learning, and interpolate and smooth patchily sampled environmental rasters using thin plate splines. Davis Rabosky AR, Cox CL, Rabosky DL, Title PO, Holmes IA, Feldman A, McGuire JA (2016) <doi:10.1038/ncomms11484>. Nychka D, Furrer R, Paige J, Sain S (2021) <doi:10.5065/D6W957CT>. Pateiro-Lopez B, Rodriguez-Casal A (2022) <https://CRAN.R-project.org/package=alphahull>.
 
+Development: https://github.com/hannahlowens/voluModel
+
 Current build status
 ====================
 
